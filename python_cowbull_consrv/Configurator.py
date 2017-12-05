@@ -92,15 +92,15 @@ class Configurator(object):
         self.error_handler = ErrorHandler(
             module="Configurator",
             method="__init__",
-            level=self.app.config["LOGGING_LEVEL"],
-            format=self.app.config["LOGGING_FORMAT"]
+            level=self.app.config["logging_level"],
+            format=self.app.config["logging_format"]
         )
 
         self.error_handler.log(
             message="Initialized logging (level: {}, format: {})"
                 .format(
-                    self.app.config["LOGGING_LEVEL"],
-                    self.app.config["LOGGING_FORMAT"]
+                    self.app.config["logging_level"],
+                    self.app.config["logging_format"]
                 ),
             logger=logging.info
         )
