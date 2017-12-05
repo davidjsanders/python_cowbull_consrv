@@ -29,7 +29,7 @@ def page_not_found(e):
 v1routes(app=app)
 
 if __name__ == "__main__":
-    configurator.dump_variables()
+    configurator.print_variables()
     app.run\
         (
             host=app.config.get("FLASK_HOST", app.config.get("flask_host", "0.0.0.0")),
