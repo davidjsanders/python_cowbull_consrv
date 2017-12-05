@@ -146,8 +146,8 @@ class Configurator(object):
 
     def dump_variables(self):
         return [
-                   ("LOGGING_LEVEL", self.app.config["LOGGING_LEVEL"]),
-                   ("LOGGING_FORMAT", self.app.config["LOGGING_FORMAT"]),
+                   ("logging_level", self.app.config["logging_level"]),
+                   ("logging_format", self.app.config["logging_format"]),
                    ("COWBULL_CONFIG", self.app.config["COWBULL_CONFIG"])
                ] \
                + \
