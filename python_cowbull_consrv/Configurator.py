@@ -56,6 +56,25 @@ class Configurator(object):
                 "description": "The cowbull game server API version",
                 "required": False,
                 "default": "v1"
+            },
+            {
+                "name": "cowbull_ready_route",
+                "description": "The cowbull game server readiness route",
+                "required": False,
+                "default": "ready"
+            },
+            {
+                "name": "cowbull_timeout",
+                "description": "The cowbull game server timeout level (in seconds)",
+                "required": False,
+                "default": "ready"
+            },
+            {
+                "name": "cowbull_tolerance",
+                "description": "The cowbull game server failure tolerance level (no. of retries)",
+                "required": False,
+                "default": 3,
+                "caster": int
             }
         ]
 

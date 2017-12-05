@@ -26,6 +26,7 @@ def page_not_found(e):
         html_message="The resource requested does not support the method used in the call."
     )
 
+configurator.print_variables()
 v1routes(app=app)
 
 if __name__ == "__main__":
