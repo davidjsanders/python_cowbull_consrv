@@ -19,20 +19,20 @@ class Configurator(object):
         self.error_handler = None
         self.env_vars = [
             {
-                "name": "FLASK_HOST",
+                "name": "flask_host",
                 "description": "For debug purposes, defines the Flask host. Default is 0.0.0.0",
                 "required": False,
                 "default": "0.0.0.0"
             },
             {
-                "name": "FLASK_PORT",
+                "name": "flask_port",
                 "description": "For debug purposes, the port Flask should serve on. Default is 5000",
                 "required": False,
                 "default": 5000,
                 "caster": int
             },
             {
-                "name": "FLASK_DEBUG",
+                "name": "flask_debug",
                 "description": "For debug purposes, set Flask into debug mode.",
                 "required": False,
                 "default": True,

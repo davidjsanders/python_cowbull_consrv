@@ -31,7 +31,7 @@ v1routes(app=app)
 if __name__ == "__main__":
     app.run\
         (
-            host="0.0.0.0",
-            port=5000,
-            debug=True
+            host=app.config.get("FLASK_HOST", app.config.get("flask_host", "0.0.0.0")),
+            port=app.config.get("FLASK_PORT", app.config.get("flask_port", 5000)),
+            debug=app.config.get("FLASK_DEBUG", app.config.get("flask_debug", True)),
         )
