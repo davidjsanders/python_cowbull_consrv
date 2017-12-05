@@ -67,7 +67,8 @@ class Configurator(object):
                 "name": "cowbull_timeout",
                 "description": "The cowbull game server timeout level (in seconds)",
                 "required": False,
-                "default": "ready"
+                "default": "ready",
+                "caster": float
             },
             {
                 "name": "cowbull_tolerance",

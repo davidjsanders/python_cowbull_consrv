@@ -1,4 +1,4 @@
-from python_cowbull_consrv import app, configurator
+from python_cowbull_consrv import app, configurator, validator
 from helpers.html_error_handler import html_error_handler
 from routes.v1routes import v1routes
 
@@ -31,9 +31,13 @@ v1routes(app=app)
 
 if __name__ == "__main__":
     configurator.print_variables()
+    configurator.error_handler.log(message="Cowbull game server ready? {}. Checked at {}".format(
+        app.config.get("cowbull_ready"),
+        app.config.get("cowbull_ready_checked_at")
+    ))
     app.run\
         (
-            host=app.config.get("FLASK_HOST", app.config.get("flask_host", "0.0.0.0")),
-            port=app.config.get("FLASK_PORT", app.config.get("flask_port", 5000)),
-            debug=app.config.get("FLASK_DEBUG", app.config.get("flask_debug", True)),
+            host=app.config.get("flask_host"),
+            port=app.config.get("flask_port"),
+            debug=app.config.get("flask_debug"),
         )
