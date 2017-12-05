@@ -1,4 +1,4 @@
-from python_cowbull_consrv import app
+from python_cowbull_consrv import app, configurator
 from helpers.html_error_handler import html_error_handler
 from routes.v1routes import v1routes
 
@@ -29,6 +29,7 @@ def page_not_found(e):
 v1routes(app=app)
 
 if __name__ == "__main__":
+    configurator.dump_variables()
     app.run\
         (
             host=app.config.get("FLASK_HOST", app.config.get("flask_host", "0.0.0.0")),
