@@ -68,13 +68,25 @@ class Configurator(object):
         self.app = app
         self.app.config["PYTHON_VERSION_MAJOR"] = sys.version_info[0]
 
-        self.app.config["LOGGING_FORMAT"] = os.getenv(
+        self.app.config["logging_format"] = os.getenv(
             "logging_format",
-            os.getenv("LOGGING_FORMAT", "%(asctime)s %(levelname)s: %(message)s")
+            os.getenv(
+                "LOGGING_FORMAT",
+                os.getenv(
+                    "logging_format",
+                    "%(asctime)s %(levelname)s: %(message)s"
+                )
+            )
         )
-        self.app.config["LOGGING_LEVEL"] = os.getenv(
+        self.app.config["logging_level"] = os.getenv(
             "logging_level",
-            os.getenv("LOGGING_LEVEL", logging.WARNING)
+            os.getenv(
+                "LOGGING_LEVEL",
+                os.getenv(
+                    "logging_level",
+                    logging.WARNING
+                )
+            )
         )
 
         self.error_handler = ErrorHandler(
