@@ -7,6 +7,7 @@ from routes.v1.Health import Health
 from routes.v1.Game import Game
 from routes.v1.Modes import Modes
 from routes.v1.Config import Config
+from routes.v1.Admin import Admin
 
 
 def v1routes(app=None):
@@ -15,6 +16,7 @@ def v1routes(app=None):
     version = "v1"
 
     # Define views
+    admin_view = Admin.as_view('Admin')
     game_view = Game.as_view('Game')
     mode_view = Modes.as_view('Modes')
     config_view = Config.as_view('Config')
@@ -23,6 +25,12 @@ def v1routes(app=None):
     readiness_view = Readiness.as_view('ready')
 
     # Add URL rules
+    app.add_url_rule(
+        '/{}/admin'.format(version),
+        view_func=admin_view,
+        methods=["GET", "POST", "PUT"]
+    )
+
     app.add_url_rule(
         '/{}/game'.format(version),
         view_func=game_view,
